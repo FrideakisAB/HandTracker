@@ -22,7 +22,7 @@ jobs:
       run: pip install conan
 
     - name: Create Build Environment
-      run: sudo apt-get update --fix-missing && sudo apt-get install libgl1-mesa-dev && sudo apt-get install libglu1-mesa-dev && sudo apt-get install xorg-dev && sudo apt-get install libxcb-render-util0-dev && sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test && sudo apt-get update -qq && sudo apt-get install -qq g++-9 && sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 90 && cmake -E make_directory ${{runner.workspace}}/build
+      run: sudo apt-get update --fix-missing && sudo apt-get install libgl1-mesa-dev && sudo apt-get install libxcb-xkb-dev && sudo apt-get install libglu1-mesa-dev && sudo apt-get install xorg-dev && sudo apt-get install libxcb-render-util0-dev && sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test && sudo apt-get update -qq && sudo apt-get install -qq g++-9 && sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 90 && cmake -E make_directory ${{runner.workspace}}/build
 
     - name: Configure CMake
       shell: bash
