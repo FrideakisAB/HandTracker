@@ -7,6 +7,7 @@
 
 #include "Mesh.h"
 #include "Shader.h"
+#include "PythonLauncher.h"
 
 void resize_callback(GLFWwindow* window, int width, int height);
 void input(GLFWwindow* window);
@@ -51,6 +52,8 @@ int main()
 
     Mesh m;
     m.CreateCube();
+
+    PythonLauncher pl;
 
     glm::quat orientation = glm::quat(glm::vec3(0, 0, 0));
     glm::vec3 up = orientation * glm::vec3(0.0f, 1.0f, 0.0f);
